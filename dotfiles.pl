@@ -8,12 +8,14 @@ use Cwd;
 
 sub main {
 	my $argc = shift;
-	my @argv = shift;
+	my @argv = @_;
 	return help() if $argc < 1;
 
 	my $dotfiles = Dotfiles->new
 	->files(qw{
-		test.sh	
+		.zshrc
+		.zsh/
+		.docker/
 	});
 
 	given ($argv[0]) {
@@ -70,7 +72,7 @@ sub dry_link {
 
 sub files {
 	my $self  = shift;
-	my @files = shift;
+	my @files = @_;
 	push @{$self->{files}}, @files;
 	$self;
 }
