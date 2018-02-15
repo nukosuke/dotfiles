@@ -14,8 +14,8 @@ sub main {
 	my $dotfiles = Dotfiles->new
 	->files(qw{
 		.zshrc
-		.zsh/
-		.docker/
+		.zsh
+		.docker
 	});
 
 	given ($argv[0]) {
@@ -30,6 +30,7 @@ sub main {
 sub new {
 	my $class = shift;
 	bless +{
+		op    => "",
 		files => [],
 		cmds  => [],
 	}, $class;
@@ -59,7 +60,8 @@ sub run {
 	}
 
 	my $n_linked = scalar(@{$self->{files}});
-	print "$n_linked symlinks have been created.\n";
+	my $op = $self->{op} eq "LINK" ? "created" : "deleted";
+	print "$n_linked symlinks have been $op.\n";
 	exit 0;
 }
 
@@ -73,6 +75,7 @@ sub dry_run {
 
 sub link {
 	my $self = shift;
+	$self->{op} = "LINK";
 	foreach (@{$self->{files}}) {
 		my $from = getcwd() . "/$_";
 		my $to   = homedir() . "/$_";
@@ -84,8 +87,9 @@ sub link {
 
 sub unlink {
 	my $self = shift;
+	$self->{op} = "UNLINK";
 	foreach (@{$self->{files}}) {
-		my $from = homedir() . $_;
+		my $from = homedir() . "/$_";
 		next unless -e $from;
 		next unless -l $from;
 		push @{$self->{cmds}}, "unlink $from";
