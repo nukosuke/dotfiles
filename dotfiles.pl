@@ -19,10 +19,11 @@ sub main {
 	});
 
 	given ($argv[0]) {
-		when ("link")     { $dotfiles->link; }
-		when ("dry_link") { $dotfiles->dry_link; }
-		when ("unlink")   { $dotfiles->unlink; }
-		default           { help(); }
+		when ("link")       { $dotfiles->link->run; }
+		when ("dry_link")   { $dotfiles->link->dry_run; }
+		when ("unlink")     { $dotfiles->unlink->run; }
+		when ("dry_unlink") { $dotfiles->unlink->dry_run; }
+		default             { help(); }
 	}
 }
 
@@ -30,6 +31,7 @@ sub new {
 	my $class = shift;
 	bless +{
 		files => [],
+		cmds  => [],
 	}, $class;
 }
 
@@ -48,26 +50,47 @@ EOS
 	exit 0;
 }
 
-sub link {
+sub run {
 	my $self = shift;
-	foreach (@{$self->{files}}) {
-		my $cmd = link_cmd($_);
-		system($cmd) != 0
-			or die "[failure] $cmd\n";
-		print "linked $_\n";
+	foreach (@{$self->{cmds}}) {
+		system($_) != 0
+			or die "[failure] $_\n";
+		print "+ $_\n";
 	}
 
 	my $n_linked = scalar(@{$self->{files}});
-	print "$n_linked files have been linked\n";
+	print "$n_linked symlinks have been created.\n";
 	exit 0;
 }
 
-sub dry_link {
+sub dry_run {
 	my $self = shift;
-	foreach (@{$self->{files}}) {
-		print "+ " . link_cmd($_) . "\n";
+	foreach (@{$self->{cmds}}) {
+		print "+ $_\n";
 	}
 	exit 0;
+}
+
+sub link {
+	my $self = shift;
+	foreach (@{$self->{files}}) {
+		my $from = getcwd() . "/$_";
+		my $to   = homedir() . "/$_";
+		next if -e $to;
+		push @{$self->{cmds}}, "ln -s $from $to";
+	}
+	$self;
+}
+
+sub unlink {
+	my $self = shift;
+	foreach (@{$self->{files}}) {
+		my $from = homedir() . $_;
+		next unless -e $from;
+		next unless -l $from;
+		push @{$self->{cmds}}, "unlink $from";
+	}
+	$self;
 }
 
 sub files {
@@ -78,13 +101,6 @@ sub files {
 }
 
 ####################
-
-sub link_cmd {
-	my $filename = shift;
-	my $from     = getcwd() . "/$filename";
-	my $to       = homedir() . "/$filename";
-	"ln -s $from $to";
-}
 
 sub homedir {
 	$ENV{"HOME"};
