@@ -55,22 +55,24 @@ EOS
 
 sub run {
 	my $self = shift;
+	my $op_sym = $self->{op} eq "LINK" ? "+" : "-";
 	foreach (@{$self->{cmds}}) {
 		system($_) == 0
 			or die "[failure] $_\n";
-		print "+ $_\n";
+		print "$op_sym $_\n";
 	}
 
 	my $n_linked = scalar(@{$self->{cmds}});
-	my $op = $self->{op} eq "LINK" ? "created" : "deleted";
-	print "$n_linked symlinks have been $op.\n";
+	my $op_result = $self->{op} eq "LINK" ? "created" : "deleted";
+	print "$n_linked symlinks have been $op_result.\n";
 	exit 0;
 }
 
 sub dry_run {
 	my $self = shift;
+	my $op_sym = $self->{op} eq "LINK" ? "+" : "-";
 	foreach (@{$self->{cmds}}) {
-		print "+ $_\n";
+		print "$op_sym $_\n";
 	}
 	exit 0;
 }
