@@ -59,7 +59,7 @@ sub run {
 		print "+ $_\n";
 	}
 
-	my $n_linked = scalar(@{$self->{files}});
+	my $n_linked = scalar(@{$self->{cmds}});
 	my $op = $self->{op} eq "LINK" ? "created" : "deleted";
 	print "$n_linked symlinks have been $op.\n";
 	exit 0;
