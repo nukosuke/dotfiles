@@ -53,7 +53,7 @@ EOS
 sub run {
 	my $self = shift;
 	foreach (@{$self->{cmds}}) {
-		system($_) != 0
+		system($_) == 0
 			or die "[failure] $_\n";
 		print "+ $_\n";
 	}
