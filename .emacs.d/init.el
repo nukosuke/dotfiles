@@ -4,92 +4,93 @@
 ;;; Commentary:
 ;;; Code:
 
-(require 'eieio)
+;; using straight for package manager
+(let ((bootstrap-file (concat user-emacs-directory "straight/repos/straight.el/bootstrap.el"))
+      (bootstrap-version 3))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+	(url-retrieve-synchronously
+	 "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+	 'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
 
-;; 設定ファイルディレクトリをパスに追加
-;; ~/.emacs.d/site-lisp 以下全部読み込み
-(let ((default-directory (expand-file-name "~/.emacs.d/site-lisp")))
-  (add-to-list 'load-path default-directory)
-  (if (fboundp 'normal-top-level-add-subdirs-to-load-path)
-      (normal-top-level-add-subdirs-to-load-path)))
-
-(load (concat user-emacs-directory "el-get-init.el"))
-
+(straight-use-package 'use-package)
+(use-package el-patch :straight t)
+(use-package init-loader :straight t)
 (setq init-loader-show-log-after-init nil)
 (init-loader-load "~/.emacs.d/init")
 
-;; パッケージ管理
-(el-get 'sync)
-
 ;; 行番号を表示
-(package-initialize)
-(require `hlinum)
-(global-linum-mode 1)
+;(package-initialize)
+;(require `hlinum)
+;(global-linum-mode 1)
 
 ;; git差分表示
-(require 'git-gutter-fringe+)
-(global-git-gutter+-mode t)
+;(require 'git-gutter-fringe+)
+;(global-git-gutter+-mode t)
 
 ;; スクロールをぬるぬるさせる
-(require `smooth-scroll)
-(smooth-scroll-mode 1)
+;(require `smooth-scroll)
+;(smooth-scroll-mode 1)
 
 ;; テーマを読み込み
-(require `hc-zenburn-theme)
+;(require `hc-zenburn-theme)
 
 ;; タブ機能
-(load "elscreen-init")
+;(load "elscreen-init")
 
 ;; モードラインをシャレオツにする
-(powerline-default-theme)
+;(powerline-default-theme)
 
 ;; フレームの切り替え
-(load "win-switch-init")
+;(load "win-switch-init")
 
 ;; helmの有効化
-(require 'helm-config)
-(helm-mode 1)
+;(require 'helm-config)
+;(helm-mode 1)
 
 ;; メジャーモードの起動設定
-(load "auto-mode-alist")
+;(load "auto-mode-alist")
 
 ;; スニペット機能
-(load "yasnippet-init")
+;(load "yasnippet-init")
 
 ;; ポップアップ表示
-(load "popup-init")
+;(load "popup-init")
 
 ;; 補完機能
-(load "auto-complete-init")
+;(load "auto-complete-init")
 
 ;; 対応する括弧を自動補完
-(smartparens-global-mode t)
+;(smartparens-global-mode t)
 
 ;; 検索にマッチした数と現在の位置を表示
-(global-anzu-mode +1)
+;(global-anzu-mode +1)
 
 ;; コピペした場所をハイライトする
-(require 'volatile-highlights)
-(volatile-highlights-mode 1)
+;(require 'volatile-highlights)
+;(volatile-highlights-mode 1)
 
 ;; シンタックスエラーを表示
-(add-hook 'after-init-hook #'global-flycheck-mode)
+;(add-hook 'after-init-hook #'global-flycheck-mode)
 
 ;; プロジェクトの構成を読む
-(projectile-global-mode t)
+;(projectile-global-mode t)
 
 ;;;TODO:
 ;;w3m
 ;;mew
 
 ;; twitterモードの設定
-(load "twittering-mode-init")
+;(load "twittering-mode-init")
 
 ;; キーバインドの設定
-(load "key-bindings-init")
+;(load "key-bindings-init")
 
 ;;; magit keybind
-(global-set-key (kbd "C-c C-g") 'magit-status)
+;(global-set-key (kbd "C-c C-g") 'magit-status)
 
 ;(load "after-init.el")
 
