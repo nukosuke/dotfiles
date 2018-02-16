@@ -13,7 +13,10 @@
 
 (use-package ruby-mode :straight t)
 (use-package go-mode :straight t)
+(use-package json-mode :straight t)
 (use-package yaml-mode :straight t)
+(use-package dockerfile-mode :straight t)
+(use-package markdown-mode :straight t)
 
 (provide 'auto-mode-alist)
 
