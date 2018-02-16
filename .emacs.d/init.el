@@ -51,18 +51,6 @@
 ;(require 'helm-config)
 ;(helm-mode 1)
 
-;; メジャーモードの起動設定
-;(load "auto-mode-alist")
-
-;; スニペット機能
-;(load "yasnippet-init")
-
-;; ポップアップ表示
-;(load "popup-init")
-
-;; 補完機能
-;(load "auto-complete-init")
-
 ;; 対応する括弧を自動補完
 ;(smartparens-global-mode t)
 
@@ -82,12 +70,6 @@
 ;;;TODO:
 ;;w3m
 ;;mew
-
-;; twitterモードの設定
-;(load "twittering-mode-init")
-
-;; キーバインドの設定
-;(load "key-bindings-init")
 
 ;;; magit keybind
 ;(global-set-key (kbd "C-c C-g") 'magit-status)
