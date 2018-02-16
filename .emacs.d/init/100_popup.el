@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(require 'popup)
+(use-package popup :straight t)
 
 ;; TabもしくはCtrl+nで次の候補に移動
 (define-key popup-menu-keymap (kbd "TAB") 'popup-next)

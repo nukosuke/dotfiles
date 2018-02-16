@@ -22,15 +22,6 @@
 (setq init-loader-show-log-after-init nil)
 (init-loader-load "~/.emacs.d/init")
 
-;; 行番号を表示
-;(package-initialize)
-;(require `hlinum)
-;(global-linum-mode 1)
-
-;; git差分表示
-;(require 'git-gutter-fringe+)
-;(global-git-gutter+-mode t)
-
 ;; スクロールをぬるぬるさせる
 ;(require `smooth-scroll)
 ;(smooth-scroll-mode 1)
@@ -46,10 +37,6 @@
 
 ;; フレームの切り替え
 ;(load "win-switch-init")
-
-;; helmの有効化
-;(require 'helm-config)
-;(helm-mode 1)
 
 ;; 対応する括弧を自動補完
 ;(smartparens-global-mode t)
@@ -67,14 +54,8 @@
 ;; プロジェクトの構成を読む
 ;(projectile-global-mode t)
 
-;;;TODO:
-;;w3m
-;;mew
-
 ;;; magit keybind
 ;(global-set-key (kbd "C-c C-g") 'magit-status)
-
-;(load "after-init.el")
 
 (provide 'init)
 ;;; init.el ends here
