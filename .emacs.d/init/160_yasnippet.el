@@ -2,12 +2,13 @@
 ;;; Commentary:
 ;;; Code:
 (use-package yasnippet :straight t)
+(use-package yasnippet-snippets :straight t)
 (yas-global-mode 1)
 
 ;; スニペットのディレクトリを追加
 (setq yas-snippet-dirs
       '("~/.emacs.d/snippets"
-        "~/.emacs.d/straight/yasnippet/snippets"
+        "~/.emacs.d/straight/repos/yasnippet-snippets/snippets"
         ))
 
 ;; タブで補完を起動
