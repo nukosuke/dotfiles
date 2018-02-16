@@ -15,6 +15,7 @@ sub main {
 	->files(qw{
 		.zshrc
 		.zsh
+		.emacs.d
 		.docker
 	});
 

@@ -1,0 +1,14 @@
+# directory
+el-get/
+elpa/
+auto-save-list/
+eshell/
+newsticker/
+var/
+
+# files
+ac-comphist.dat
+session.*
+projectile-bookmarks.eld
+recentf
+network-security.data
