@@ -6,18 +6,19 @@ use warnings;
 use experimental qw(switch);
 use Cwd;
 
+my @INSTALL = qw(
+	.zshrc
+	.zsh
+	.emacs.d
+	.docker
+);
+
 sub main {
 	my $argc = shift;
 	my @argv = @_;
 	return help() if $argc < 1;
 
-	my $dotfiles = Dotfiles->new
-	->files(qw{
-		.zshrc
-		.zsh
-		.emacs.d
-		.docker
-	});
+	my $dotfiles = Dotfiles->new->files(@INSTALL);
 
 	given ($argv[0]) {
 		when ("link")       { $dotfiles->link->run; }
