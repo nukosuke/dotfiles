@@ -15,7 +15,6 @@
 (el-get-bundle elpa:anzu)
 (el-get-bundle elpa:bind-key)
 (el-get-bundle elpa:cmake-mode)
-(el-get-bundle elpa:dash)
 (el-get-bundle elpa:drag-stuff)
 (el-get-bundle elpa:exec-path-from-shell)
 (el-get-bundle elpa:expand-region)
@@ -41,7 +40,6 @@
 (el-get-bundle elpa:prodigy)
 (el-get-bundle elpa:projectile)
 (el-get-bundle elpa:protobuf-mode)
-(el-get-bundle elpa:s)
 (el-get-bundle elpa:sequential-command)
 (el-get-bundle elpa:smartparens)
 (el-get-bundle elpa:smartrep)
@@ -52,8 +50,6 @@
 (el-get-bundle tide)
 (el-get-bundle elpa:undo-tree)
 (el-get-bundle elpa:volatile-highlights)
-(el-get-bundle elpa:win-switch)
-(el-get-bundle elpa:yasnippet)
 
 (provide 'el-get-init)
 ;;; el-get-init.el ends here
