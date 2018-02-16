@@ -2,6 +2,6 @@
 @nukosuke 's .emacs.d  
 
 ## deps
-- emacs >= 23.x
+- emacs >= 24.4
 - git
 

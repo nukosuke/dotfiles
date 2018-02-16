@@ -1,17 +1,4 @@
-;;; el-get-init -- パッケージマネージャEl-Getの初期化
-;;; Commentary:
-;;; Code:
-
-(add-to-list 'load-path (locate-user-emacs-file "el-get/el-get"))
-(unless (require 'el-get nil 'noerror)
-  (with-current-buffer
-      (url-retrieve-synchronously
-       "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")
-    (goto-char (point-max))
-    (eval-print-last-sexp)))
-
 (el-get-bundle purcell/exec-path-from-shell)
-
 (el-get-bundle elpa:anzu)
 (el-get-bundle elpa:bind-key)
 (el-get-bundle elpa:cmake-mode)
@@ -34,8 +21,6 @@
 (el-get-bundle elpa:multiple-cursors)
 (el-get-bundle elpa:open-junk-file)
 (el-get-bundle sigma/pcache)
-(el-get-bundle elpa:popup)
-(el-get-bundle elpa:popwin)
 (el-get-bundle elpa:powerline)
 (el-get-bundle elpa:prodigy)
 (el-get-bundle elpa:projectile)
@@ -50,6 +35,3 @@
 (el-get-bundle tide)
 (el-get-bundle elpa:undo-tree)
 (el-get-bundle elpa:volatile-highlights)
-
-(provide 'el-get-init)
-;;; el-get-init.el ends here
