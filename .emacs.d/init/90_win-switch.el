@@ -1,8 +1,8 @@
-;;; win-switch-init.el -- win-switchの初期化
+;;; win-switch.el -- win-switchの初期化
 ;;; Commentary:
 ;;; Code:
 
-(require 'win-switch)
+(use-package win-switch :straight t)
 
 ;;; 0.75秒間受け付けるタイマー
 (setq win-switch-idle-time 0.75)
