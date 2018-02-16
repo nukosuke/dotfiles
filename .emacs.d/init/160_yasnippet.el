@@ -1,13 +1,13 @@
-;;; yasnippet-init.el -- yasnippet初期化
+;;; yasnippet.el -- yasnippet初期化
 ;;; Commentary:
 ;;; Code:
-(require 'yasnippet)
-(require 'popup)
+(use-package yasnippet :straight t)
+(yas-global-mode 1)
 
 ;; スニペットのディレクトリを追加
 (setq yas-snippet-dirs
       '("~/.emacs.d/snippets"
-        "~/.emacs.d/elpa/yasnippet-20150415.244/snippets"
+        "~/.emacs.d/straight/yasnippet/snippets"
         ))
 
 ;; タブで補完を起動
@@ -30,8 +30,5 @@
      )))
 
 (setq yas-prompt-functions '(yas-popup-isearch-prompt yas-ido-prompt yas-no-prompt))
-
-;; 有効化
-(yas-global-mode 1)
 
 ;;; yasnippet-init.el ends here
