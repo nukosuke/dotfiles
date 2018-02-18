@@ -40,8 +40,5 @@
 ;; プロジェクトの構成を読む
 ;(projectile-global-mode t)
 
-;;; magit keybind
-;(global-set-key (kbd "C-c C-g") 'magit-status)
-
 (provide 'init)
 ;;; init.el ends here
