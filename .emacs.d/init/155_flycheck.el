@@ -1,5 +1,5 @@
-(use-package flycheck :straight t)
-(use-package flycheck-pos-tip :straight t)
+(use-package flycheck)
+(use-package flycheck-pos-tip)
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
 

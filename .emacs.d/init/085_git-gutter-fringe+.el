@@ -1,4 +1,4 @@
-(use-package magit-popup :straight t)
-(use-package git-gutter-fringe+ :straight t)
+(use-package magit-popup)
+(use-package git-gutter-fringe+)
 (global-git-gutter+-mode t)
 

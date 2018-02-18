@@ -1,3 +1,3 @@
-(use-package popwin :straight t)
+(use-package popwin)
 (popwin-mode 1)
 

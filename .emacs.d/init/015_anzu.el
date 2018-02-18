@@ -1,2 +1,2 @@
-(use-package anzu :straight t)
+(use-package anzu)
 (global-anzu-mode +1)

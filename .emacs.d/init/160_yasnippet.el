@@ -1,8 +1,8 @@
 ;;; yasnippet.el -- yasnippet初期化
 ;;; Commentary:
 ;;; Code:
-(use-package yasnippet :straight t)
-(use-package yasnippet-snippets :straight t)
+(use-package yasnippet)
+(use-package yasnippet-snippets)
 (yas-global-mode 1)
 
 ;; スニペットのディレクトリを追加

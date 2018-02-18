@@ -1,2 +1,2 @@
-(use-package magit :straight t)
+(use-package magit)
 

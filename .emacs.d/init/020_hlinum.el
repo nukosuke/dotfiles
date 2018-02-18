@@ -1,3 +1,3 @@
-(use-package hlinum :straight t)
+(use-package hlinum)
 (global-linum-mode 1)
 

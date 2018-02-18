@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package win-switch :straight t)
+(use-package win-switch)
 
 ;;; 0.75秒間受け付けるタイマー
 (setq win-switch-idle-time 0.75)

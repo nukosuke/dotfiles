@@ -1,4 +1,4 @@
-(use-package company :straight t)
+(use-package company)
 (global-company-mode)
 
 (setq company-selection-wrap-around t)
