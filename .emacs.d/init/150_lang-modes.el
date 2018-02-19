@@ -2,15 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package web-mode)
-(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
-
-(use-package js2-mode)
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-
+(use-package web-mode :mode "\\.html\\'" "\\.css\\'" "\\.php\\'" "\\.jsx\\'")
+(use-package js2-mode :mode "\\.js\\'")
 (use-package ruby-mode)
 (use-package go-mode)
 (use-package json-mode)
