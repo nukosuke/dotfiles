@@ -26,19 +26,5 @@
 (setq init-loader-show-log-after-init nil)
 (init-loader-load "~/.emacs.d/init")
 
-;; スクロールをぬるぬるさせる
-;(require `smooth-scroll)
-;(smooth-scroll-mode 1)
-
-;; 対応する括弧を自動補完
-;(smartparens-global-mode t)
-
-;; コピペした場所をハイライトする
-;(require 'volatile-highlights)
-;(volatile-highlights-mode 1)
-
-;; プロジェクトの構成を読む
-;(projectile-global-mode t)
-
 (provide 'init)
 ;;; init.el ends here
