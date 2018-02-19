@@ -10,6 +10,7 @@ my @INSTALL = qw(
 	.zshrc
 	.zsh
 	.emacs.d
+	.vimrc
 	.docker
 );
 
