@@ -1,12 +1,20 @@
-(use-package company)
-(global-company-mode)
+;;; 050_company.el -- 補完機能設定
+;;; Commentary:
+;;; Code:
 
-(setq company-selection-wrap-around t)
+(use-package company
+  :init
+  (global-company-mode)
+  ;; 下までいったら上に戻ってくる（逆も同じ）
+  (setq company-selection-wrap-around t)
 
-;; keybindings
-(define-key company-active-map (kbd "M-n") nil)
-(define-key company-active-map (kbd "M-p") nil)
-(define-key company-active-map (kbd "C-n") 'company-select-next)
-(define-key company-active-map (kbd "C-p") 'company-select-previous)
-(define-key company-active-map (kbd "C-h") nil)
+  :bind
+  (:map company-active-map
+        ("M-n" . nil)
+        ("M-p" . nil)
+        ("C-n" . company-select-next)
+        ("C-p" . company-select-previous)
+        ("C-h" . nil)))
 
+(provide '050_company)
+;;; 050_company.el ends here

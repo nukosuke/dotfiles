@@ -3,7 +3,6 @@
 ;;; Code:
 
 (use-package helm
-
   :init
   (require 'helm-config)
   ;; 下までいったら上に戻ってくる（逆も同じ）
