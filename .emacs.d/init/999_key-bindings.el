@@ -17,10 +17,7 @@
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 
 ;;; C-c prefix
-(global-set-key (kbd "C-c C-g") 'magit-status)
-
-
-
+(global-set-key (kbd "C-c g s") 'magit-status)
 
 (provide '999_key-bindings)
 ;;; 999_key-bindings.el ends here
