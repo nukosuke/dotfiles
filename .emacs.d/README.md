@@ -1,7 +1,6 @@
 # .emacs.d
-@nukosuke 's .emacs.d  
+[@nukosuke](https://github.com/nukosuke)'s .emacs.d  
 
 ## deps
-- emacs >= 24.4
+- emacs >= 25
 - git
-
