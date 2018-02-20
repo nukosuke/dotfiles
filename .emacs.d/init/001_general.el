@@ -23,5 +23,9 @@
 ;; スクロールバー非表示
 (scroll-bar-mode 0)
 
+;; macOSでCommandキーをmetaに割り当て
+(when (eq system-type 'darwin)
+  (setq ns-command-modifier (quote meta)))
+
 (provide '001_general)
 ;;; 001_general.el ends here
