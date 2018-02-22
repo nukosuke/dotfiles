@@ -12,6 +12,7 @@ my @INSTALL = qw(
 	.emacs.d
 	.vimrc
 	.docker
+	.gemrc
 );
 
 sub main {
