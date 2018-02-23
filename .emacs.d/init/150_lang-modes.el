@@ -10,6 +10,7 @@
 (use-package yaml-mode)
 (use-package dockerfile-mode)
 (use-package markdown-mode)
+(use-package slim-mode)
 (use-package gitignore-mode)
 
 (provide 'auto-mode-alist)
