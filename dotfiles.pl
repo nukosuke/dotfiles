@@ -11,6 +11,7 @@ my @INSTALL = qw(
 	.zsh
 	.emacs.d
 	.vimrc
+	.tmux.conf
 	.docker
 	.gemrc
 );
