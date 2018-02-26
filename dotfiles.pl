@@ -34,7 +34,7 @@ sub main {
 sub new {
 	my $class = shift;
 	bless +{
-		op    => "",
+		operation_type => "", # "+" => link, "-" => unlink
 		files => [],
 		cmds  => [],
 	}, $class;
@@ -59,7 +59,7 @@ EOS
 
 sub run {
 	my $self = shift;
-	my $op_sym = $self->{op} eq "LINK" ? "+" : "-";
+	my $op_sym = $self->{operation_type};
 	foreach (@{$self->{cmds}}) {
 		system($_) == 0
 			or die "[failure] $_\n";
@@ -67,23 +67,26 @@ sub run {
 	}
 
 	my $n_linked = scalar(@{$self->{cmds}});
-	my $op_result = $self->{op} eq "LINK" ? "created" : "deleted";
+	my $op_result = operation_type_word($self->{operation_type});
 	print "$n_linked symlinks have been $op_result.\n";
 	exit 0;
 }
 
 sub dry_run {
 	my $self = shift;
-	my $op_sym = $self->{op} eq "LINK" ? "+" : "-";
+	my $op_sym = $self->{operation_type};
 	foreach (@{$self->{cmds}}) {
 		print "$op_sym $_\n";
 	}
+	my $n_to_link = scalar(@{$self->{cmds}});
+	my $op_result = operation_type_word($self->{operation_type});
+	print "$n_to_link symlinks will be $op_result.\n";
 	exit 0;
 }
 
 sub link {
 	my $self = shift;
-	$self->{op} = "LINK";
+	$self->{operation_type} = "+";
 	foreach (@{$self->{files}}) {
 		my $from = getcwd() . "/$_";
 		my $to   = homedir() . "/$_";
@@ -95,7 +98,7 @@ sub link {
 
 sub unlink {
 	my $self = shift;
-	$self->{op} = "UNLINK";
+	$self->{operation_type} = "-";
 	foreach (@{$self->{files}}) {
 		my $from = homedir() . "/$_";
 		next unless -e $from;
@@ -116,6 +119,11 @@ sub files {
 
 sub homedir {
 	$ENV{"HOME"};
+}
+
+sub operation_type_word {
+	my $op_type = shift;
+	$op_type eq "+" ? "created" : "deleted";
 }
 
 main(scalar(@ARGV), @ARGV);
