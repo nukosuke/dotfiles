@@ -1,4 +1,4 @@
-;;; lang-modes.el -- 言語モードの設定
+;;; 150_lang-modes.el -- 言語モードの設定
 ;;; Commentary:
 ;;; Code:
 
@@ -14,6 +14,6 @@
 (use-package slim-mode)
 (use-package gitignore-mode)
 
-(provide 'auto-mode-alist)
+(provide '150_lang-modes)
 
-;;; auto-mode-alist.el ends here
+;;; 150_lang-modes.el ends here
