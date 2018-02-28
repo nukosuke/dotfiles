@@ -7,6 +7,7 @@
 (use-package ruby-mode)
 (use-package elixir-mode)
 (use-package go-mode)
+(use-package rust-mode)
 (use-package json-mode)
 (use-package yaml-mode)
 (use-package dockerfile-mode)
