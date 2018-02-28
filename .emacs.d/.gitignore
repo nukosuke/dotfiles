@@ -1,5 +1,6 @@
 # directory
 straight/
+elpa/
 .cache/
 auto-save-list/
 eshell/
