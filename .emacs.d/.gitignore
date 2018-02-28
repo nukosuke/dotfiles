@@ -1,7 +1,9 @@
 # directory
 straight/
+elpa/
 .cache/
 auto-save-list/
+url/
 eshell/
 newsticker/
 var/
