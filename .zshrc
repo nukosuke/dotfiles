@@ -17,8 +17,9 @@ source $HOME/.zplug/init.zsh
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
 ### plugins
-zplug "dracula/zsh", as:theme
-
+zplug "modules/prompt", from:prezto
+zplug "modules/git", from:prezto
+zstyle ':prezto:module:prompt' theme 'paradox'
 
 ### install & apply
 if ! zplug check; then
