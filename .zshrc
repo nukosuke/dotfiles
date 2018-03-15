@@ -17,9 +17,12 @@ source $HOME/.zplug/init.zsh
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
 ### plugins
+zplug "modules/utility", from:prezto
 zplug "modules/prompt", from:prezto
 zplug "modules/git", from:prezto
 zstyle ':prezto:module:prompt' theme 'paradox'
+
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 ### install & apply
 if ! zplug check; then
@@ -30,3 +33,18 @@ if ! zplug check; then
 fi
 
 zplug load
+
+
+### lang envs
+#TODO: move to .zsh/ as plugin
+
+# ruby
+if [ -e $HOME/.rbenv ]; then
+  export PATH=$HOME/.rbenv/bin:$PATH
+  eval "$(rbenv init -)"
+fi
+
+# golang
+if [ -e $HOME/.gvm ]; then
+  source $HOME/.gvm/scripts/gvm
+fi
