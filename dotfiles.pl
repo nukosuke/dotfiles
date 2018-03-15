@@ -11,10 +11,11 @@ my @INSTALL = qw(
 	.zsh
 	.emacs.d
 	.vimrc
+	.gitconfig
 	.tmux.conf
 	.docker
 	.gemrc
-  .iterm2
+	.iterm2
 );
 
 sub main {
