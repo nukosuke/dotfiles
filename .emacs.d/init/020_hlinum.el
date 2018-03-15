@@ -4,7 +4,10 @@
 
 (use-package hlinum
   :init
-  (global-linum-mode 1))
+  (hlinum-activate)
+
+  :hook
+  ((prog-mode text-mode) . linum-mode))
 
 (provide '020_hlinum)
 ;;; 020_hlinum.el ends here

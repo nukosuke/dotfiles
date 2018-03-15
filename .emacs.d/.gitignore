@@ -1,12 +1,16 @@
 # directory
-straight/
+straight/repos
+straight/build
+elpa/
 .cache/
 auto-save-list/
+url/
 eshell/
 newsticker/
 var/
 
 # files
+straight/build-cache.el
 session.*
 projectile-bookmarks.eld
 recentf

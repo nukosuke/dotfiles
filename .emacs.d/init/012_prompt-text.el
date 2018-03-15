@@ -1,4 +1,4 @@
-;;; 011_prompt-text.el -- モードラインのプロンプト設定
+;;; 012_prompt-text.el -- モードラインのプロンプト設定
 ;;; Commentary:
 ;;; Code:
 
@@ -7,4 +7,4 @@
   (setq prompt-text-format "(●ↀ ω ↀ ) ")
   (prompt-text-mode 1))
 
-;;; 011_prompt-text.el ends here
+;;; 012_prompt-text.el ends here

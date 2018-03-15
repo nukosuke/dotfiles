@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+(global-set-key (kbd "M-x") 'helm-M-x)
+
 ;; C-a 行頭 -> ファイルの先頭
 ;; C-e 行末 -> ファイルの末尾
 (use-package sequential-command)
@@ -13,8 +15,9 @@
 (global-set-key (kbd "C-m") 'newline-and-indent)
 
 ;;; C-x prefix
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-x C-r") 'helm-recentf)
 
 ;;; C-c prefix
 (global-set-key (kbd "C-c g s") 'magit-status)
