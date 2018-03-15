@@ -14,6 +14,7 @@ my @INSTALL = qw(
 	.tmux.conf
 	.docker
 	.gemrc
+  .iterm2
 );
 
 sub main {
