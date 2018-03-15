@@ -12,6 +12,7 @@ my @INSTALL = qw(
 	.emacs.d
 	.vimrc
 	.docker
+	.iterm2
 );
 
 sub main {
