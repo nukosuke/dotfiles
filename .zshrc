@@ -5,9 +5,27 @@
 # VERSION:	v0.0.0
 # DESCRIPTION:	entrypoint
 
-scripts=(general alias rbenv)
+## install zplug if not exists
+if [ ! -e $HOME/.zplug ]; then
+  echo "zplus is not found"
+  echo "=> starting installation..."
+  curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
+fi
 
-for script in $scripts; do
-	source $HOME/.zsh/$script.zsh
-done
+### load zplug
+source $HOME/.zplug/init.zsh
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
+### plugins
+zplug "dracula/zsh", as:theme
+
+
+### install & apply
+if ! zplug check; then
+  printf "Install? [y/N]: "
+  if read -q; then
+    echo; zplug install
+  fi
+fi
+
+zplug load
