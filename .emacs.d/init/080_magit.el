@@ -2,7 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package magit)
+(use-package magit
+  :bind ("C-c g s" . magit-status))
 
 (provide '080_magit)
 ;;; 080_magit.el ends here
