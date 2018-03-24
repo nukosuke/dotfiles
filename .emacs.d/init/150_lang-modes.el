@@ -13,6 +13,7 @@
 (use-package dockerfile-mode)
 (use-package markdown-mode)
 (use-package slim-mode)
+(use-package protobuf-mode)
 (use-package gitignore-mode)
 
 (provide '150_lang-modes)
