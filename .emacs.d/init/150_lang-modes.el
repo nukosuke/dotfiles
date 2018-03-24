@@ -4,7 +4,9 @@
 
 (use-package web-mode :mode "\\.html\\'" "\\.css\\'" "\\.php\\'" "\\.jsx\\'")
 (use-package js2-mode :mode "\\.js\\'")
-(use-package ruby-mode)
+(use-package ruby-mode
+  :init
+  (custom-set-variables '(ruby-insert-encoding-magic-comment nil)))
 (use-package elixir-mode)
 (use-package go-mode)
 (use-package rust-mode)

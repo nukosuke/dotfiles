@@ -9,6 +9,8 @@
   :config
   (push '("*Wargings*" :dedicated t) popwin:special-display-config)
   (push '("*Buffer List*" :dedicated t) popwin:special-display-config)
+  (push '("COMMIT_EDITMSG" :dedicated t) popwin:special-display-config)
+  (push '(helm-mode :dedicated t) popwin:special-display-config)
   (push '(eshell-mode :dedicated t) popwin:special-display-config)
   (push '(docker :dedicated t) popwin:special-display-config)
   (popwin-mode 1))

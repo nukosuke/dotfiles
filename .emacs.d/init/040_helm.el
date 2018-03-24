@@ -13,8 +13,12 @@
   (helm-mode 1)
 
   :bind
+  ("M-x"     . helm-M-x)
+  ("C-x b"   . helm-buffers-list)
+  ("C-x C-f" . helm-find-files)
+  ("C-x C-r" . helm-recentf)
   (:map helm-map
-              ("C-h" . delete-backward-char)))
+        ("C-h" . delete-backward-char)))
 
 (provide '040_helm)
 ;;; 040_helm.el ends here
