@@ -12,6 +12,7 @@ my @INSTALL = qw(
 	.emacs.d
 	.vimrc
 	.gitconfig
+    .gitignore
 	.tmux.conf
 	.docker
 	.gemrc
