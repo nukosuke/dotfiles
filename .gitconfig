@@ -1,3 +1,9 @@
 [user]
 	email = nukosuke@lavabit.com
 	name = nukosuke
+[core]
+    commentchar = ";"
+    editor = emacsclient -nw -a ''
+    excludesfile = ~/.gitignore
+[color]
+    ui = true
