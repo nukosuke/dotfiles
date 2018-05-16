@@ -16,6 +16,7 @@
 (use-package markdown-mode)
 (use-package slim-mode)
 (use-package gitignore-mode)
+(use-package terraform-mode)
 
 (provide '150_lang-modes)
 
