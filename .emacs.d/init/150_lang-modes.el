@@ -13,6 +13,7 @@
 (use-package rust-mode)
 (use-package json-mode)
 (use-package yaml-mode)
+(use-package cmake-mode)
 (use-package dockerfile-mode)
 (use-package markdown-mode)
 (use-package slim-mode)
