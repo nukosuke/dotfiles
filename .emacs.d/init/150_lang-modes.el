@@ -11,6 +11,7 @@
 (use-package elixir-mode)
 (use-package go-mode)
 (use-package rust-mode)
+(use-package lua-mode)
 (use-package json-mode)
 (use-package yaml-mode)
 (use-package cmake-mode)
