@@ -22,6 +22,11 @@
 (use-package gitignore-mode)
 (use-package terraform-mode)
 
+;; Language Server Protocolを補完に使用
+(use-package company-lsp
+  :config
+  (push 'company-lsp company-backends))
+
 (provide '150_lang-modes)
 
 ;;; 150_lang-modes.el ends here
