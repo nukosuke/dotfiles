@@ -15,6 +15,7 @@
 
 (global-set-key (kbd "C-h") 'delete-backward-char)
 (global-set-key (kbd "C-m") 'newline-and-indent)
+(global-set-key (kbd "M-m") 'set-mark-command)
 
 (provide '999_key-bindings)
 ;;; 999_key-bindings.el ends here
