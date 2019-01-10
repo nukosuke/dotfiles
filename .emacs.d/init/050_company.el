@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
+;; company全般
 (use-package company
   :init
   (global-company-mode)
@@ -15,6 +16,12 @@
         ("C-n" . company-select-next)
         ("C-p" . company-select-previous)
         ("C-h" . nil)))
+
+;; Language Server Protocolを補完に使用
+(use-package company-lsp
+  :after company
+  :config
+  (push 'company-lsp company-backends))
 
 (provide '050_company)
 ;;; 050_company.el ends here
