@@ -2,8 +2,10 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package smartparens)
-(smartparens-global-mode t)
+(use-package smartparens
+  :diminish smartparens-mode
+  :config
+  (smartparens-global-mode t))
 
 (provide '025_smartparens)
 ;;; 025_smartparens.el ends here
