@@ -5,15 +5,16 @@
 
 ;;; Code:
 
-(use-package popwin
+(use-package shackle
   :config
-  (push '("*Wargings*" :dedicated t) popwin:special-display-config)
-  (push '("*Buffer List*" :dedicated t) popwin:special-display-config)
-  (push '("COMMIT_EDITMSG" :dedicated t) popwin:special-display-config)
-  (push '(helm-mode :dedicated t) popwin:special-display-config)
-  (push '(eshell-mode :dedicated t) popwin:special-display-config)
-  (push '(docker :dedicated t) popwin:special-display-config)
-  (popwin-mode 1))
+  (setq helm-display-function #'pop-to-buffer)
+  (setq shackle-rules
+        '(("*Wargings*" :dedicated t)
+          ("*Buffer List*" :dedicated t)
+          ("COMMIT_EDITMSG" :popup t)
+          ("\\`\\*helm.*?\\*\\'" :regexp t :align t :size 0.4)
+          (eshell-mode :dedicated t)
+          (docker :dedicated t))))
 
 (provide '095_popwin)
 ;;; 095_popwin.el ends here
