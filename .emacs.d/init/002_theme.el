@@ -2,9 +2,11 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package madhat2r-theme
+(use-package doom-themes
   :init
-  (load-theme 'madhat2r t))
+  (load-theme 'doom-one t)
+  (doom-themes-neotree-config)
+  (doom-themes-org-config))
 
 (provide '002_theme)
 ;;; 002_theme.el ends here
