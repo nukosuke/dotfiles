@@ -6,6 +6,6 @@
 ;;; Code:
 
 (use-package eshell :straight nil
-             :bind ("C-c e" . eshell))
+  :bind ("C-c e" . eshell))
 
 ;;; 004_eshell.el ends here
