@@ -7,14 +7,16 @@
 
 (use-package shackle
   :config
-  (setq helm-display-function 'pop-to-buffer)
-  (setq shackle-rules
-        '(("*Wargings*" :same t)
-          ("\*Buffer List" :regexp t :select t :align t :size 0.4)
-          ("\\`\\*helm.*?\\*\\'" :regexp t :align t :size 0.4)))
-  (shackle-mode)
-  (winner-mode)
-  (global-set-key (kbd "C-z") 'winner-undo))
+  (progn
+    (setq helm-display-function 'pop-to-buffer)
+    (setq shackle-rules
+          '(("*Wargings*" :same t)
+            ("\*Buffer List" :regexp t :select t :align t :size 0.4)
+            ("\\`\\*helm.*?\\*\\'" :regexp t :align t :size 0.4)
+            ("\\*eshell\\*" :regexp t :popup t :select t :align t :size 0.2)))
+    (shackle-mode)
+    (winner-mode)
+    (global-set-key (kbd "C-z") 'winner-undo)))
 
 (provide '095_popwin)
 ;;; 095_popwin.el ends here
