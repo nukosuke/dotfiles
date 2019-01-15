@@ -3,6 +3,9 @@
 ;;; Commentary:
 ;; 別バッファを入れ替えず一時的に新しいバッファをポップアップする
 
+;; TODO:
+;; file番号を最初の方に移す
+
 ;;; Code:
 
 (use-package shackle
