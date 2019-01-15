@@ -7,11 +7,9 @@
   (add-hook 'after-init-hook #'global-flycheck-mode))
 
 (use-package flycheck-pos-tip
-  :init
-  ;; エコーエリアではなくtipに表示する
-  (eval-after-load 'flycheck
-    '(custom-set-variables
-      '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages))))
+  :after flycheck
+  :custom
+  (flycheck-display-errors-function #'flycheck-pos-tip-error-messages "エコーエリアではなくtipに表示する"))
 
 (provide '155_flycheck)
 ;;; 155_flycheck.el ends here
