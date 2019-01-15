@@ -26,6 +26,9 @@
 ;; スクロールを1行ずつ
 (setq scroll-step 1)
 
+;; ピクセル単位のスクロールを有効化
+(pixel-scroll-mode 1)
+
 ;; macOSでCommandキーをmetaに割り当て
 (when (eq system-type 'darwin)
   (setq ns-command-modifier (quote meta)))
