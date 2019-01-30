@@ -9,6 +9,9 @@
   :custom
   ;; TODO: org-directory変更
   (org-return-follows-link t "RET will follow the link")
+  (org-agenda-files '("~/Dropbox/emacs_sync/org/todo.org"
+                      "~/Dropbox/emacs_sync/org/work.org") "Agenda files")
+  (org-use-speed-commands t "Use speed commands")
 
   :bind
   ("C-c o l" . org-store-link)
