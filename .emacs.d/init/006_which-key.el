@@ -5,7 +5,8 @@
 (use-package which-key
   :init
   (which-key-setup-side-window-right)
-  (which-key-mode 1))
+  (which-key-mode 1)
+  :diminish)
 
 (provide '006_which-key)
 ;;; 006_which-key.el ends here

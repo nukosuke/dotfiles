@@ -9,8 +9,6 @@
 
 (use-package yasnippet
   :after company
-  :diminish yas-minor-mode
-
   :custom
   (yas-snippet-dirs '("~/.emacs.d/snippets"
                       "~/.emacs.d/straight/repos/yasnippet-snippets/snippets") "スニペットのディレクトリ")
@@ -26,7 +24,9 @@
 			  '(:with company-yasnippet))))
   (defun set-yas-as-company-backend ()
     (setq company-backends (mapcar #'company-mode/backend-with-yas company-backends)))
-  (add-hook 'company-mode-hook 'set-yas-as-company-backend))
+  (add-hook 'company-mode-hook 'set-yas-as-company-backend)
+
+  :diminish yas-minor-mode)
 
 ;; https://github.com/AndreaCrotti/yasnippet-snippets
 (use-package yasnippet-snippets

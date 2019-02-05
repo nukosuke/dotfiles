@@ -33,7 +33,9 @@
 (when (eq system-type 'darwin)
   (setq ns-command-modifier (quote meta)))
 
-(require 'diminish)
+;; use-package :diminish :delight
+(use-package diminish)
+(use-package delight)
 
 (provide '001_general)
 ;;; 001_general.el ends here
