@@ -9,8 +9,6 @@
   :custom
   ;; 下までいったら上に戻ってくる（逆も同じ）
   (helm-move-to-line-cycle-in-source t)
-  ;; 分割時でも今のウィンドウでhelmバッファを開く
-  (helm-split-window-in-side-p t)
 
   :config
   ;; 常に有効化
