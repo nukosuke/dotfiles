@@ -7,6 +7,7 @@
 
 (use-package docker
   :if (executable-find "docker")
-  :config (docker-global-mode))
+  :config (docker-global-mode)
+  :diminish)
 
 ;;; 250_docker.el ends here

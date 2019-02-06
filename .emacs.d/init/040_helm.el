@@ -5,10 +5,14 @@
 (use-package helm
   :init
   (require 'helm-config)
+
+  :custom
   ;; 下までいったら上に戻ってくる（逆も同じ）
-  (setq helm-move-to-line-cycle-in-source t)
+  (helm-move-to-line-cycle-in-source t)
   ;; 分割時でも今のウィンドウでhelmバッファを開く
-  (setq helm-split-window-in-side-p t)
+  (helm-split-window-in-side-p t)
+
+  :config
   ;; 常に有効化
   (helm-mode 1)
 
@@ -18,7 +22,9 @@
   ("C-x C-f" . helm-find-files)
   ("C-x C-r" . helm-recentf)
   (:map helm-map
-        ("C-h" . delete-backward-char)))
+        ("C-h" . delete-backward-char))
+
+  :diminish)
 
 (provide '040_helm)
 ;;; 040_helm.el ends here

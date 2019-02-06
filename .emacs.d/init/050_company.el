@@ -15,7 +15,9 @@
         ("M-p" . nil)
         ("C-n" . company-select-next)
         ("C-p" . company-select-previous)
-        ("C-h" . nil)))
+        ("C-h" . nil))
+
+  :diminish)
 
 ;; Language Server Protocolを補完に使用
 (use-package company-lsp

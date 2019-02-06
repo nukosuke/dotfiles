@@ -16,7 +16,8 @@
     "X......."
     "XX......"
     "XXX....."
-    "XXXX...."))
+    "XXXX....")
+  :diminish git-gutter+-mode)
 
 (provide '085_git-gutter-fringe+)
 ;;; 085_git-gutter-fringe+.el ends here

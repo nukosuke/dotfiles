@@ -4,7 +4,8 @@
 
 (use-package anzu
   :config
-  (global-anzu-mode +1))
+  (global-anzu-mode +1)
+  :diminish)
 
 (provide '015_anzu)
 ;;; 015_anzu.el ends here
