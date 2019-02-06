@@ -37,5 +37,15 @@
 (use-package diminish)
 (use-package delight)
 
+;; hydra
+(use-package hydra)
+
+;; TODO
+;; move to other file
+(defhydra hydra-zoom (global-map "<f2>")
+  "zoom"
+  ("g" text-scale-increase "in")
+  ("l" text-scale-decrease "out"))
+
 (provide '001_general)
 ;;; 001_general.el ends here
