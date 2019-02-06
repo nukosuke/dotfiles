@@ -4,10 +4,14 @@
 ;; - グローバルで有効
 ;; - 検索にhelmを使用
 
+
+
 (use-package projectile
-  :config
+  :init
   (projectile-global-mode)
-  (setq projectile-completion-system 'helm))
+  :custom
+  (projectile-completion-system 'helm)
+  :diminish)
 
 (provide '156_projectile)
 ;;; 156_projectile.el ends here

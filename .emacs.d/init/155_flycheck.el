@@ -4,7 +4,18 @@
 
 (use-package flycheck
   :init
-  (add-hook 'after-init-hook #'global-flycheck-mode))
+  (global-flycheck-mode)
+  :custom
+  (flycheck-indication-mode 'right-fringe)
+  :config
+  (fringe-helper-define 'flycheck-fringe-bitmap-double-arrow 'center
+    "...X...."
+    "..XX...."
+    ".XXX...."
+    "XXXX...."
+    ".XXX...."
+    "..XX...."
+    "...X...."))
 
 (use-package flycheck-pos-tip
   :after flycheck
