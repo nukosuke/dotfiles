@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
+(use-package fish-mode)
 (use-package web-mode :mode "\\.html\\'" "\\.css\\'" "\\.php\\'" "\\.jsx\\'")
 (use-package js2-mode :mode "\\.js\\'")
 (use-package typescript-mode)

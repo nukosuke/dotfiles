@@ -7,16 +7,16 @@ use experimental qw(switch);
 use Cwd;
 
 my @INSTALL = qw(
-	.zshrc
-	.zsh
-	.emacs.d
-	.vimrc
-	.gitconfig
+    .emacs.d
+    .vimrc
+    .gitconfig
     .gitignore
-	.tmux.conf
-	.docker
-	.gemrc
-	.iterm2
+    .tmux.conf
+    .docker
+    .gemrc
+    .iterm2
+    .config/fish/config.fish
+    .config/fish/fishfile
 );
 
 sub main {
