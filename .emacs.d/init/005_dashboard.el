@@ -3,7 +3,10 @@
 ;;; Code:
 
 (use-package dashboard
-  :init
+  :custom
+  (dashboard-startup-banner 'logo)
+  (dashboard-banner-logo-title (concat "GNU Emacs " emacs-version))
+  :config
   (dashboard-setup-startup-hook))
 
 (provide '005_dashboard)
