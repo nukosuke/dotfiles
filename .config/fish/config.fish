@@ -3,3 +3,7 @@ if not functions -q fisher
     curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
     fish -c fisher
 end
+
+# nodebrew
+set -x NODEBREW_ROOT $HOME/.nodebrew
+set -x PATH $HOME/.nodebrew/current/bin $PATH
