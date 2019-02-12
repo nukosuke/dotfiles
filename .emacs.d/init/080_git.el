@@ -45,7 +45,7 @@
   ("s" git-gutter:stage-hunk "stage")
   ("r" git-gutter:revert-hunk "revert")
   ("m" git-gutter:mark-hunk "mark")
-  ("SPC" git-gutter:toggle-popup-hunk "popup viewer"))
+  ("SPC" git-gutter:toggle-popup-hunk "toggle diffinfo"))
 
 ;;
 ;; git-gutter-fringe
