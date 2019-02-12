@@ -31,7 +31,8 @@
 (use-package company-box
   :if (version<= "26.1" emacs-version)
   :straight (:host github :repo "sebastiencs/company-box")
-  :hook (company-mode . company-box-mode))
+  :hook (company-mode . company-box-mode)
+  :diminish)
 
 ;;
 ;; Language Server Protocolを補完に使用
