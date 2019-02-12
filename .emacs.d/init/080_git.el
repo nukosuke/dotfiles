@@ -28,6 +28,13 @@
   :bind
   ("C-c g" . hydra-git-gutter/body))
 
+(defun git-gutter:toggle-popup-hunk ()
+  "Toggle git-gutter hunk window."
+  (interactive)
+  (if (window-live-p (git-gutter:popup-buffer-window))
+      (delete-window (git-gutter:popup-buffer-window))
+      (git-gutter:popup-hunk)))
+
 ;;
 ;; git-gutterのhunk操作用hydra
 ;;
@@ -38,7 +45,7 @@
   ("s" git-gutter:stage-hunk "stage")
   ("r" git-gutter:revert-hunk "revert")
   ("m" git-gutter:mark-hunk "mark")
-  ("SPC" git-gutter:popup-hunk "popup viewer"))
+  ("SPC" git-gutter:toggle-popup-hunk "popup viewer"))
 
 ;;
 ;; git-gutter-fringe
