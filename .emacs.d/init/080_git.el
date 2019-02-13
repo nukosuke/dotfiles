@@ -17,7 +17,7 @@
 ;;
 (use-package magit
   :bind
-  ("C-c C-c" . magit-dispatch-popup))
+  ("C-c C-v" . magit-dispatch-popup))
 
 ;;
 ;; git-gutter
