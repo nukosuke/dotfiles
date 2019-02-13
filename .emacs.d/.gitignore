@@ -15,3 +15,6 @@ session.*
 projectile-bookmarks.eld
 recentf
 network-security.data
+
+# local packages
+site-lisp/
