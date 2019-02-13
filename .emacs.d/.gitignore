@@ -8,6 +8,7 @@ url/
 eshell/
 newsticker/
 var/
+request/
 
 # files
 straight/build-cache.el
@@ -15,6 +16,7 @@ session.*
 projectile-bookmarks.eld
 recentf
 network-security.data
+.lsp-session-*
 
 # local packages
 site-lisp/
