@@ -6,6 +6,8 @@
   ;; Emacs標準のバージョンを使う
   :straight nil
 
+  :after (sequential-command magit)
+
   :custom
   ;; TODO: org-directory変更
   (org-return-follows-link t "RET will follow the link")
@@ -16,7 +18,11 @@
   :bind
   ("C-c o l" . org-store-link)
   ("C-c o a" . org-agenda)
-  ("C-c o c" . org-capture))
+  ("C-c o c" . org-capture)
+  (:map org-mode-map
+        ("C-c C-v" . magit-dispatch-popup)
+        ("C-a" . seq-home)
+        ("C-e" . seq-end)))
 
 (provide '500_org)
 ;;; 500_org.el ends here
