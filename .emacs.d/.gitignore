@@ -1,6 +1,7 @@
 # directory
 straight/repos
 straight/build
+straight/modified
 elpa/
 .cache/
 auto-save-list/
@@ -9,6 +10,7 @@ eshell/
 newsticker/
 var/
 request/
+transient/
 
 # files
 straight/build-cache.el
