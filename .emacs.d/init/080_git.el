@@ -20,6 +20,13 @@
   ("C-c C-v" . magit-dispatch))
 
 ;;
+;; forge
+;;
+(use-package forge
+  :bind
+  ("C-c C-f" . forge-dispatch))
+
+;;
 ;; git-gutter
 ;;
 (use-package git-gutter
