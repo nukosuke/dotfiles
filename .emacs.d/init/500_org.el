@@ -33,7 +33,7 @@
                 ("e" "Export" org-export)]])
 
 (define-transient-command org-export ()
-  "Export Org document."
+  "Export Org document as/to other format."
   ["Export"
    [("m" "As Markdown" org-md-export-as-markdown)
     ("M" "To Markdown" org-md-export-to-markdown)]])
