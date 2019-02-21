@@ -27,6 +27,11 @@
   ("C-c C-f" . forge-dispatch))
 
 ;;
+;; hydra
+;; TODO: replace hydra-git-gutter to transient and remove hydra
+(use-package hydra)
+
+;;
 ;; git-gutter
 ;;
 (use-package git-gutter

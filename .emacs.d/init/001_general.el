@@ -39,10 +39,6 @@
 (use-package diminish)
 (use-package delight)
 
-;; hydra
-;; TODO: replace by transient and remove
-(use-package hydra)
-
 ;; transient
 ;; is also in magit
 (use-package transient)
