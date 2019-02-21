@@ -27,18 +27,13 @@
   ("C-c C-f" . forge-dispatch))
 
 ;;
-;; hydra
-;; TODO: replace hydra-git-gutter to transient and remove hydra
-(use-package hydra)
-
-;;
 ;; git-gutter
 ;;
 (use-package git-gutter
   :custom
   (git-gutter:ask-p nil)
   :bind
-  ("C-c g" . hydra-git-gutter/body))
+  ("C-c g" . git-gutter-dispatch))
 
 (defun git-gutter:toggle-popup-hunk ()
   "Toggle git-gutter hunk window."
@@ -48,16 +43,19 @@
       (git-gutter:popup-hunk)))
 
 ;;
-;; git-gutterのhunk操作用hydra
+;; git-gutterのhunk操作用transient-command
 ;;
-(defhydra hydra-git-gutter nil
-  "git hunk"
-  ("p" git-gutter:previous-hunk "previous")
-  ("n" git-gutter:next-hunk "next")
-  ("s" git-gutter:stage-hunk "stage")
-  ("r" git-gutter:revert-hunk "revert")
-  ("m" git-gutter:mark-hunk "mark")
-  ("SPC" git-gutter:toggle-popup-hunk "toggle diffinfo"))
+(define-transient-command git-gutter-dispatch ()
+  "Invoke a git-gutter command from a list of available commands."
+  :transient-suffix 'transient--do-stay
+  :transient-non-suffix 'transient--do-warn
+  ["git hunk"
+   ("p" "Previous" git-gutter:previous-hunk)
+   ("n" "Next"     git-gutter:next-hunk)
+   ("s" "Stage"    git-gutter:stage-hunk)
+   ("r" "Revert"   git-gutter:revert-hunk)
+   ("m" "Mark"     git-gutter:mark-hunk)
+   ("SPC" "Toggle diffinfo" git-gutter:toggle-popup-hunk)])
 
 ;;
 ;; git-gutter-fringe
