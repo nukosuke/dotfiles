@@ -40,6 +40,7 @@
 (use-package delight)
 
 ;; hydra
+;; TODO: replace by transient and remove
 (use-package hydra)
 
 ;; transient
@@ -82,13 +83,16 @@
    ("g" "Get recipe"         straight-get-recipe)
    ("e" "Prune build"        straight-prune-build)])
 
-;; TODO
+;; Todo
 ;; - move to other file
-;; - replace by transient
-(defhydra hydra-zoom (global-map "<f2>")
-  "zoom"
-  ("g" text-scale-increase "in")
-  ("l" text-scale-decrease "out"))
+(define-transient-command zoom-dispatch ()
+  "Invoke a zoom command from a list of available commands."
+  :transient-suffix 'transient--do-stay
+  :transient-non-suffix 'transient--do-warn
+  ["Zoom commands"
+   ("g" "Zoom IN" text-scale-increase)
+   ("l" "Zoom OUT" text-scale-decrease)])
+(global-set-key (kbd "<f2>") 'zoom-dispatch)
 
 (provide '001_general)
 ;;; 001_general.el ends here
