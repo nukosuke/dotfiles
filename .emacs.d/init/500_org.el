@@ -6,7 +6,8 @@
   ;; Emacs標準のバージョンを使う
   :straight nil
 
-  :after (sequential-command magit)
+  :after (sequential-command
+          magit) ;; NOTE: using transient in magit
 
   :custom
   ;; TODO: org-directory変更
@@ -16,13 +17,26 @@
   (org-use-speed-commands t "Use speed commands")
 
   :bind
-  ("C-c o l" . org-store-link)
-  ("C-c o a" . org-agenda)
-  ("C-c o c" . org-capture)
+  ("C-c o". org-dispatch)
   (:map org-mode-map
-        ("C-c C-v" . magit-dispatch-popup)
+        ("C-c C-v" . magit-dispatch)
         ("C-a" . seq-home)
         ("C-e" . seq-end)))
+
+(define-transient-command org-dispatch ()
+  "Invoke a Org-mode command from a list of available commands."
+  ["Transient and dwim commands"
+   [("a" "Agenda"     org-agenda)
+    ("c" "Capture"    org-capture)
+    ("l" "Store link" org-store-link)]
+   [:if-derived org-mode
+                ("e" "Export" org-export)]])
+
+(define-transient-command org-export ()
+  "Export Org document."
+  ["Export"
+   [("m" "As Markdown" org-md-export-as-markdown)
+    ("M" "To Markdown" org-md-export-to-markdown)]])
 
 (provide '500_org)
 ;;; 500_org.el ends here
