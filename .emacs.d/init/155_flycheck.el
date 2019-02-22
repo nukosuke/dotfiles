@@ -3,6 +3,7 @@
 ;;; Code:
 
 (use-package flycheck
+  :after git-gutter
   :init
   (global-flycheck-mode)
   :custom

@@ -61,6 +61,7 @@
 ;; git-gutter-fringe
 ;;
 (use-package git-gutter-fringe
+  :after git-gutter
   :config
   (fringe-helper-define 'git-gutter-fr:added '(center repeated)
     "XXX.....")
