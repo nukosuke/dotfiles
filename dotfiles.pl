@@ -7,7 +7,6 @@ use experimental qw(switch);
 use Cwd;
 
 my @INSTALL = qw(
-    .emacs.d
     .vimrc
     .gitconfig
     .gitignore

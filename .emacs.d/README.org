@@ -1,9 +1,3 @@
 * .emacs.d
 
-[[https://github.com/nukosuke][@nukosuke]]'s .emacs.d  
-
-** deps
-
-- emacs >= 26
-- git
-
+Moved to [[https://github.com/nukosuke/.emacs.d][nukosuke/.emacs.d]]
