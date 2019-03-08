@@ -1,0 +1,42 @@
+Create    Both
+Expunge   Both
+SyncState *
+
+IMAPAccount gmail-work
+Host imap.gmail.com
+User yosuke.tamura@mixi.co.jp
+PassCmd "security find-generic-password -s mbsync-gmail-work -w"
+AuthMechs LOGIN
+SSLType IMAPS
+CertificateFile /etc/ssl/cert.pem
+
+IMAPStore gmail-remote
+Account gmail-work
+
+MaildirStore gmail-local
+Path  ~/Maildir/work/
+Inbox ~/Maildir/work/inbox
+
+Channel gmail-inbox
+Master  :gmail-remote:
+Slave   :gmail-local:
+Patterns "INBOX"
+
+Channel gmail-trash
+Master  :gmail-remote:"[Gmail]/&MLQw33ux-"
+Slave   :gmail-local:trash
+
+Channel gmail-sent
+Master  :gmail-remote:"[Gmail]/&kAFP4W4IMH8w4TD8MOs-"
+Slave   :gmail-local:sent
+
+Channel gmail-archive
+Master :gmail-remote:
+Slave  :gmail-local:
+Patterns "Arch*"
+
+Group gmail-work
+Channel gmail-inbox
+Channel gmail-sent
+Channel gmail-trash
+Channel gmail-archive
