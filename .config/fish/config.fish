@@ -7,3 +7,8 @@ end
 # nodebrew
 set -x NODEBREW_ROOT $HOME/.nodebrew
 set -x PATH $HOME/.nodebrew/current/bin $PATH
+
+# gvm
+function gvm
+  bass source ~/.gvm/scripts/gvm ';' gvm $argv
+end
