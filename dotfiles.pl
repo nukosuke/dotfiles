@@ -13,7 +13,7 @@ my @INSTALL = qw(
     .tmux.conf
     .docker
     .gemrc
-    .iterm2
+    .hyper.js
     .config/fish/config.fish
     .config/fish/fishfile
 );
