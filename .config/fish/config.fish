@@ -12,3 +12,13 @@ set -x PATH $HOME/.nodebrew/current/bin $PATH
 function gvm
   bass source ~/.gvm/scripts/gvm ';' gvm $argv
 end
+
+switch (uname)
+case Darwin
+function emacs
+  /Applications/Emacs.app/Contents/MacOS/Emacs $argv &
+end
+end
+source ~/.asdf/asdf.fish
+
+direnv hook fish | source
