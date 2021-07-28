@@ -4,21 +4,13 @@ if not functions -q fisher
     fish -c fisher
 end
 
-# nodebrew
-set -x NODEBREW_ROOT $HOME/.nodebrew
-set -x PATH $HOME/.nodebrew/current/bin $PATH
-
-# gvm
-function gvm
-  bass source ~/.gvm/scripts/gvm ';' gvm $argv
-end
-
 switch (uname)
 case Darwin
 function emacs
   /Applications/Emacs.app/Contents/MacOS/Emacs $argv &
 end
 end
+
 source ~/.asdf/asdf.fish
 
 direnv hook fish | source
