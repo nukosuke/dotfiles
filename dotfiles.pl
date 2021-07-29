@@ -16,7 +16,7 @@ my @INSTALL = qw(
     .gemrc
     .hyper.js
     .config/fish/config.fish
-    .config/fish/fishfile
+    .config/fish/fish_plugins
 );
 
 sub main {
