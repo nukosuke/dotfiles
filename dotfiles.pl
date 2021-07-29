@@ -11,6 +11,7 @@ my @INSTALL = qw(
     .gitconfig
     .gitignore
     .tmux.conf
+    .tool-versions
     .docker
     .gemrc
     .hyper.js
