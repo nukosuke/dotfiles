@@ -11,6 +11,5 @@ function emacs
 end
 end
 
-source ~/.asdf/asdf.fish
-
-direnv hook fish | source
+source /usr/local/share/fish/vendor_conf.d/*.fish
+source /usr/local/share/fish/vendor_completions.d/*.fish
