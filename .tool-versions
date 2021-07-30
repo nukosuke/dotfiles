@@ -1,7 +1,7 @@
-nodejs 14.16.1
+nodejs 14.16.0
 golang 1.16
-erlang 22.3
-elixir 1.10.4-otp-22
+erlang 23.3.4
+elixir 1.11.4
 ruby 3.0.0
 rust 1.49.0
 java adoptopenjdk-11.0.10+9
