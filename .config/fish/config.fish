@@ -15,4 +15,4 @@ source /usr/local/share/fish/vendor_conf.d/*.fish
 source /usr/local/share/fish/vendor_completions.d/*.fish
 
 # asdf
-source /usr/local/lib/asdf.fish
+source /usr/local/opt/asdf/asdf.fish
