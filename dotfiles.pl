@@ -14,7 +14,8 @@ my @INSTALL = qw(
     .tool-versions
     .docker
     .gemrc
-    .hyper.js
+    .config/alacritty/alacritty.yml
+    .config/alacritty/dracula.yml
     .config/fish/config.fish
     .config/fish/fish_plugins
 );
